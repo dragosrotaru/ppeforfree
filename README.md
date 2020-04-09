@@ -1,29 +1,38 @@
-![React Logo](https://github.com/zeit/now/blob/master/packages/frameworks/logos/react.svg)
+# ppeforfree.org
 
-# React Example
+Promoting and coordinating not-for-profit and nonprofit PPE initiatives around the world.
 
-This directory is a brief example of a [React](https://reactjs.org/) app with [Serverless Functions](https://zeit.co/docs/v2/serverless-functions/introduction) that can be deployed with ZEIT Now and zero configuration.
+## Status
 
-## Deploy Your Own
+![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fppeforfree.org)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/DragosRotaru/ppeforfree)
+![GitHub issues](https://img.shields.io/github/issues-raw/DragosRotaru/ppeforfree)
+![GitHub contributors](https://img.shields.io/github/contributors/DragosRotaru/ppeforfree)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/DragosRotaru/ppeforfree)
+![Discord](https://img.shields.io/discord/697286781208363078)
 
-Deploy your own React project, along with Serverless Functions, with ZEIT Now.
+## Getting involved
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/zeit/now/tree/master/examples/create-react-app-functions)
+See [CONTRIBUTING](CONTRIBUTING.md).
 
-_Live Example: https://create-react-app.now-examples.now.sh/_
+## Getting help
 
-### How We Created This Example
+## Install and Usage
 
-To get started with React, along with [Serverless Functions](https://zeit.co/docs/v2/serverless-functions/introduction), with ZEIT Now, you can use the [Create-React-App CLI](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to initialize the project:
+1. make sure NodeJS is installed on your machine.
+2. clone this repoository.
+3. run `npm install` command in the root of the repository.
 
-```shell
-$ npx create-react-app my-app
-```
+## Usage
 
-### Deploying From Your Terminal
+run `npm start` in the root of the repository.
 
-You can deploy your new React project, along with [Serverless Functions](https://zeit.co/docs/v2/serverless-functions/introduction), with a single command from your terminal using [Now CLI](https://zeit.co/download):
+## Testing
 
-```shell
-$ now
-```
+run `npm test` in the root of the repository.
+
+## Credits and references
+
+1. Phil Tucker's 3DPrintedPPE.com
+2. Open Source COVID19 Medical Supplies [roster doc](https://docs.google.com/spreadsheets/d/1JH5uL3WW6PwvwFRe4wqXkheK0-jcGYqaPmb9J3Dr6Ac/edit?fbclid=IwAR3FX_xPe-bYbXQmjsXF5FUr7aISp27wGwHXuNIWzh92ScdQQSgVVrbixBo#gid=179139280)
+3. www.covidhelpmap.com
