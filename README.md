@@ -5,10 +5,15 @@ Promoting and coordinating not-for-profit and nonprofit PPE initiatives around t
 ## Status
 
 ![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fppeforfree.org)
+
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/DragosRotaru/ppeforfree)
+
 ![GitHub issues](https://img.shields.io/github/issues-raw/DragosRotaru/ppeforfree)
+
 ![GitHub contributors](https://img.shields.io/github/contributors/DragosRotaru/ppeforfree)
+
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/DragosRotaru/ppeforfree)
+
 ![Discord](https://img.shields.io/discord/697286781208363078)
 
 ## Getting involved
