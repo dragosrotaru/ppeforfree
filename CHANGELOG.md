@@ -13,3 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - added CHANGELOG, CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, ISSUE_TEMPLATES
 - re-initialized with latest Create React App TypeScript template
 - added badges
+
+## 0.0.2 - 2020-04-09
+
+- Added Header and Navigation
+- Added About Page
+- Added Github Link
