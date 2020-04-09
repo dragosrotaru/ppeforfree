@@ -25,7 +25,7 @@ See [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Usage
 
-run `npm run start` in the root of the repository.
+run `npm start` in the root of the repository.
 
 ## Testing
 
