@@ -1,6 +1,6 @@
 # Guidance on how to contribute
 
-For now, all individuals are urged to join our discord: https://discord.gg/yuBMbJf.
+For now, we encourage you to join our discord: https://discord.gg/yuBMbJf.
 
 We will need help with the following:
 
