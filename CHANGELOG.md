@@ -10,6 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - bought domain ppeforfree.org
 - initialized repo using Zeit Create React App template
 - setup domain and deployment config on Zeit Now (zeit.co)
-- added CHANGELOG, CONTRIBUTING, CODE_OF_CONDUCT, LICENSE
+- added CHANGELOG, CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, ISSUE_TEMPLATES
 - re-initialized with latest Create React App TypeScript template
 - added badges
