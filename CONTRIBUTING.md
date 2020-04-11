@@ -23,7 +23,7 @@ as others who are interested in this solution.
 
 Use the issue tracker to find ways to contribute. Find a bug or a feature, mention in
 the issue that you will take on that effort, then follow the _Changing the code-base_
-guidance below.
+guidance below. You will then be assigned by a contributor.
 
 ## Changing the code-base
 
