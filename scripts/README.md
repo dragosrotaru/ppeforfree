@@ -10,6 +10,7 @@ Install the following packages with pip:
 requestium
 pandas
 python-dotenv
+facebook-scraper
 ```
 
 You should be ready to run any of the scripts after that.
