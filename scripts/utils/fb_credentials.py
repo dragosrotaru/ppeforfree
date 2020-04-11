@@ -7,6 +7,6 @@ def get_credentials():
     password = os.getenv("FB_PASSWORD")
 
     if not username or not password:
-        raise Exception('Could find both FB_USERNAME and FB_PASSWORD variables in environment')
+        raise Exception('Could not find both FB_USERNAME and FB_PASSWORD variables in environment')
 
     return username, password
