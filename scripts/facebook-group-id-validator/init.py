@@ -19,6 +19,5 @@ for idx, item in df.iterrows():
         df.iloc[idx]['valid'] = True
     else:
         print(f"NOT VALID: {item[0]}")
-    break
 
 df.to_csv("filepath", index=False)
