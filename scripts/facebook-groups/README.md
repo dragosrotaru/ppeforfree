@@ -4,14 +4,9 @@
 
 These scripts require Python 3.
 
-Install the following packages with pip:
+Install the dependencies using pip:
 
-```
-requestium
-pandas
-python-dotenv
-facebook-scraper
-```
+`pip install -r requirements.txt`
 
 You should be ready to run any of the scripts after that.
 
