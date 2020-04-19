@@ -5,5 +5,5 @@ export default interface FacebookGroup {
     description?: string,
     memberCount?: number,
     adminCount?:  number,
-    [propName: string]: any;
+    [key: string]: any;
 }
