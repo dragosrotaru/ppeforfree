@@ -1,0 +1,12 @@
+.fb-group-table {
+    margin: 0 auto;
+    table-layout: auto;
+}
+
+.fb-group-table th {
+    text-align: left;
+}
+
+.fb-group-table th, .fb-group-table td {
+    padding: 5px;
+}
