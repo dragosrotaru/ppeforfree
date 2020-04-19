@@ -16,7 +16,7 @@ const GroupTable = ({columnList, data}: GroupTableProps) => (
         {data.map((group: FacebookGroup) => (
             <tr>
                 {columnList.map((col: string) => (
-                    <td>{group[col]}</td>
+                    <td>{group[col].toString()}</td>
                 ))}
             </tr>
         ))}
