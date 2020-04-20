@@ -1,0 +1,9 @@
+## Environment Variables (.env)
+
+```
+FB_USERID
+FB_USERNAME
+FB_PASSWORD
+FB_2FA
+FB_GROUPS_IDS_FILEPATH
+```

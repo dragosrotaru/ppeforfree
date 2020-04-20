@@ -5,16 +5,17 @@ __pycache__/
 *.py[cod]
 
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.js
 
 # testing
-/coverage
+coverage/
 
 # production
-/build
-/dist
+build/
+dist/
+lib/
 
 # misc
 .DS_Store
