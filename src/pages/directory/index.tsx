@@ -1,40 +1,72 @@
 import React from "react";
+import { Table } from "../../components/table";
+import data from "../../latest.json";
 import "./style.css";
 
-import GroupTable from "../../components/GroupTable"
-import FacebookGroup from "../../models/FacebookGroup";
-
-const columnList: string[] = ["name", "isPublic", "description", "memberCount", "adminCount"];
-const data: FacebookGroup[] = [
+const columns = [
   {
-    id: "12345",
-    name: "Test Group",
-    isPublic: true,
-    description: "This is a test group description",
-    memberCount: 100,
-    adminCount: 2
+    key: "_id",
+    name: "Mongo ID",
+    display: false,
   },
   {
-    id: "12345",
-    name: "Test Group",
-    isPublic: true,
-    description: "This is a test group description",
-    memberCount: 100,
-    adminCount: 2
+    key: "id",
+    name: "ID",
+    display: false,
   },
   {
-    id: "12345",
-    name: "Test Group",
-    isPublic: true,
-    description: "This is a test group description",
-    memberCount: 100,
-    adminCount: 2
+    key: "scrapeID",
+    name: "Scrape Batch ID",
+    display: false,
+  },
+  {
+    key: "name",
+    name: "Name",
+  },
+  {
+    key: "isPublic",
+    name: "Public",
+  },
+  {
+    key: "foundedOn",
+    name: "Created",
+  },
+  {
+    key: "description",
+    name: "Description",
+  },
+  {
+    key: "locations",
+    name: "Locations",
+  },
+  {
+    key: "memberCount",
+    name: "Members",
+  },
+  {
+    key: "memberCountIncreaseWeekly",
+    name: "Weekly Growth",
+  },
+  {
+    key: "postCountIncreaseDaily",
+    name: "Daily Posts",
+  },
+  {
+    key: "postCountIncreaseMonthly",
+    name: "Monthly Posts",
+  },
+  {
+    key: "scrapedAt",
+    name: "Last Updated",
   },
 ];
 
 export const Directory = () => (
   <div>
     <h1>Directory</h1>
-    <GroupTable columnList={columnList} data={data}/>
+    <Table
+      columns={columns.filter((col) => col.display !== false)}
+      data={data}
+    />
   </div>
 );
