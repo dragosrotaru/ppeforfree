@@ -18,9 +18,10 @@ See [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Install and Usage
 
-1. make sure NodeJS is installed on your machine.
-2. clone this repoository.
-3. run `npm install` command in the root of the repository.
+1. clone this repository.
+2. install nvm (node version manager) [here](https://github.com/nvm-sh/nvm#install--update-script)
+3. run `nvm install` then `nvm use` in the root of the repository. (installs and activates node version in `.nvmrc`)
+4. run `npm install` command in the root of the repository.
 
 ## Usage
 
