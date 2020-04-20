@@ -1,40 +1,30 @@
 import React from "react";
+import { Table } from "../../components/table";
+import data from "../../latest.json";
 import "./style.css";
 
-import GroupTable from "../../components/GroupTable"
-import FacebookGroup from "../../models/FacebookGroup";
-
-const columnList: string[] = ["name", "isPublic", "description", "memberCount", "adminCount"];
-const data: FacebookGroup[] = [
+const columns = [
   {
-    id: "12345",
-    name: "Test Group",
-    isPublic: true,
-    description: "This is a test group description",
-    memberCount: 100,
-    adminCount: 2
+    key: "name",
+    name: "Name",
   },
   {
-    id: "12345",
-    name: "Test Group",
-    isPublic: true,
-    description: "This is a test group description",
-    memberCount: 100,
-    adminCount: 2
+    key: "isPublic",
+    name: "Public",
   },
   {
-    id: "12345",
-    name: "Test Group",
-    isPublic: true,
-    description: "This is a test group description",
-    memberCount: 100,
-    adminCount: 2
+    key: "description",
+    name: "Description",
+  },
+  {
+    key: "memberCount",
+    name: "Members",
   },
 ];
 
 export const Directory = () => (
   <div>
     <h1>Directory</h1>
-    <GroupTable columnList={columnList} data={data}/>
+    <Table columns={columns} data={data} />
   </div>
 );
