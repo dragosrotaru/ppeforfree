@@ -9,96 +9,122 @@ export const About = () => (
       <p>
         In the age of information warfare, fake news and a polluted information
         ecology, our capacity to engage in mutually beneficial decision-making
-        begins and ends with our ability to uncover Truth in the sea of noise.
-        The collective struggle to make sense of what is True and what is not
-        leads us to fundamental disagreements about the nature of reality - a
-        fragmentation of our understanding of what is and what ought to be.
+        begins and ends with our ability to find capital-T universal Truth in
+        the sea of noise. The collective struggle to make sense of what is and
+        is not True leads us to fundamental disagreements about the nature of
+        reality - a fragmentation of our understanding of what is, what was and
+        what ought to be.
       </p>
       <p>
-        Truth is not a matter of opinion; it is a common good, as much yours as
-        it is mine. Truth is impartial and apolitical. Truth is the fuel that
-        feeds the fires of Justice.
+        <strong>
+          Truth is not a matter of opinion; it is a common good, as much yours
+          as it is mine. Truth is impartial and apolitical. Truth is the fuel
+          that feeds the fires of Justice.
+        </strong>
       </p>
       <p>
         Every good decision is conceived by the seed of Truth. It sprouts when a
-        person acknowledges the Truth and it blooms when a person makes the
+        person acknowledges the Truth and it blooms when that person makes the
         conscious choice to act on it. Our inability to make good decisions
-        perpetuates Human suffering. This is particularly evident in moments of
+        perpetuates human suffering. This is particularly evident in moments of
         crisis, when the stakes are higher, the senses are hightened and the
-        pretense of normalcy is stripped away to expose the consequences of a
-        broken system laid bare. The Truth is, this pandemic doesn't care if you
-        did everything right. Our local actions have global consequences. We
-        need everyone, everywhere at every level of society to make better
-        decisions.
+        pretense of normalcy is stripped away to expose the failings of a broken
+        system laid bare.
       </p>
-      <p>Finding the Truth starts with quality information.</p>
       <p>
-        The mission of this project is to grow a sense-making machine for the
-        people and by the people. A machine that combines the OSINT (Open Source
-        Intelligence) capabilities of the NSA, the ethos or community of
+        The mission of this project is to grow a sense-making movement for the
+        people and by the people. A movement that combines the OSINT (Open
+        Source Intelligence) capabilities of the NSA, the ethos or community of
         Wikipedia, the freedom of the internet and the determination of millions
         of restless minds searching for the means to create a better tomorrow.
       </p>
       <p>
-        This machine will be used to break down information silos. It will be
-        used to provide tools that empower the individual. It will be used to
-        unify fragmented groups. It will be used to find truthful, accurate and
-        relevant data, and put it in the hands of those that wield the power to
-        use it for good. It will be used to amplify the signal and reduce the
-        noise. If this sounds vague, keep reading.
+        The solution is not simple or singular, It cannot be boiled down without
+        doing you a disservice and a detailed explanation is both beyond the
+        scope of this document and a lame way to convince you. Instead we will
+        demonstrate by example. Words are cheap. Many people have a lot of
+        things to say about world affairs but few take action. Furthermore, this
+        is all about thinking globally and acting locally. We are not
+        architecting a way to restructure civilization or anything crazy like
+        that. We are, at the core, tool makers and truth seekers looking to make
+        a dent and move the needle of progress.
       </p>
       <p>
-        For a viable DIY PPE ecosystem to exist, we need coordination and
-        cooperation. People need to fall in line with already existing efforts.
-        The mission of this project is to enhance the sense-making and
-        coordination machinery of the DIY PPE ecosystem. Right now people are
-        acting locally, which is awesome, but we need them to also think
-        globally.
+        So what is this? At minimum it is an attempt to fix the information
+        ecology of the PPE supply chain using a fresh new approach. Hence why
+        this site is called PPEForFree.
       </p>
       <p>
-        We do this by decluttering the web of redundant efforts. We actively
-        maintain single (open) sources of truth – a comprehensive directory of
-        local initiatives. A repository of gold standard designs. Working Groups
-        to solve problems. We create a funnel for people to find their tribe. We
-        standardize. We integrate. We unify. We increase the signal, reduce the
-        noise.
+        <strong>Ok enough talk... So where do we start?</strong>
       </p>
       <p>
-        Our first goal is to dramatically scale and boost the efficiency of the
-        grassroots decentralized Personal Protective Equipment supply chain that
-        has sprung up before our eyes. If you are not familiar, millions of
-        people and small businesses around the world are producing face masks,
-        face shields, ventilators and a whole range of supplies for their local
-        hospitals and other front line organizations.
+        Well right now there are regular people all over the world making PPE in
+        their community through what we call the Grassroots PPE Supply Chain. We
+        want to turn it up all the way to 11. We are going to amplify the
+        signal, reduce the noise.
       </p>
-
-      <h2>Lets Work Together</h2>
       <p>
-        For now, we encourage you to join our discord:
-        https://discord.gg/yuBMbJf.
+        <strong>
+          Step 1: make this site the central hub for Grassroots PPE Supply Chain
+          information.
+        </strong>
       </p>
-      <p>We will need help with the following:</p>
       <ul>
         <li>
-          Spreading the word. Launching Agressive Outreach and Social Media
-          Campaigning.
-        </li>
-        <li>Opening lines of communication with Governments and Industry.</li>
-        <li>
-          Finding all other competing directories and convincing them to join
-          forces.
+          grab the public data from PPE Facebook groups automatically and
+          display that data in a table.
         </li>
         <li>
-          Finding every initiative out there, adding it to the database and and
-          opening up lines of communication.
+          make the site as user friendly and useful as possible with insightful
+          visualisations of data and search / filter / sort / export
+          functionality for easy discovery.
         </li>
-        <li>Verifying organizations and intentions - "Trust, But Verify".</li>
-        <li>Developing a legal framework for providing access to free PPE.</li>
-        <li>Developing Ad Hoc Supply-Demand Coordination systems</li>
-        <li>Establishing Working Groups.</li>
-        <li>Developing the website.</li>
-        <li>And much, much more...</li>
+        <li>
+          crowd-source discovery of new groups by allowing users to submit links
+          on the website.
+        </li>
+        <li>
+          build a team of outreach volunteers to manually verify each
+          crowd-sourced submission, as well as to reach out to the groups and
+          open lines of communication.
+        </li>
+        <li>
+          provide an open API and a kickass open-source community so potential
+          competitors work with us instead.
+        </li>
+        <li>
+          convince as many leaders as possible to include a link to this website
+          somewhere where it is visible to every single person in their
+          organisation.
+        </li>
+        <li>
+          aggregate all the information, particularly links, shared acoss all
+          facebook groups, vetted by subject matter expert volunteers, and
+          display them here.
+        </li>
+        <li>share this website agressively on social media</li>
+        <li>make this site accessible in as many languages as possible</li>
+        <li>
+          create a comprehensive gold standard repository of PPE designs,
+          methodologies, processes, tools, etc.
+        </li>
+        <li>
+          provide a legal framework with free waivers for every juristiction to
+          allow those donating homemade PPE to do so knowing they are staying
+          within the law.
+        </li>
       </ul>
+      <h2>We need your help</h2>
+      <p>
+        Please share this website on social media.
+        <br />
+        <br />
+        Use the hashtag <strong>#ppeforfree</strong> if you would like.
+        <br />
+        <br />
+        If you would like to get involved{" "}
+        <a href="https://discord.gg/yuBMbJf">join us on discord</a>
+      </p>
     </div>
   </div>
 );

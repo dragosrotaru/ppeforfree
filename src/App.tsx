@@ -29,8 +29,8 @@ function App() {
             </TopAppBarSection>
             <TopAppBarSection alignEnd>
               <nav>
-                <Link to="/">directory</Link>
-                <Link to="/about">about</Link>
+                <Link to="/">about</Link>
+                <Link to="/directory">directory</Link>
                 <a
                   href="http://github.com/DragosRotaru/ppeforfree"
                   target="_blank"
@@ -45,8 +45,8 @@ function App() {
         <TopAppBarFixedAdjust />
 
         <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/" component={Directory} />
+          <Route path="/directory" component={Directory} />
+          <Route path="/" component={About} />
         </Switch>
       </Router>
     </div>
