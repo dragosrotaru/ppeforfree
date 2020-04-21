@@ -4,12 +4,16 @@
   flex-direction: column;
   align-items: center;
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .about-container div {
   max-width: 800px;
 }
 
+.about-container h2 {
+  padding-top: 20px;
+}
 .about-container h1 {
   font-size: 1.5em;
 }
