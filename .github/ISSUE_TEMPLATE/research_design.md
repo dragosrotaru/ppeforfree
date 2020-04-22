@@ -1,6 +1,6 @@
 ---
 name: Research & Design
-about: high level feature requests
+about: High level improvements and big ticket items not yet broken down.
 title: ''
 labels: 'Research + Design'
 assignees: ''
