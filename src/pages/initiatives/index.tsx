@@ -90,6 +90,15 @@ export const InitiativeDirectory = () => (
       columns={columns.filter((col) => col.display !== false)}
       data={data.map((entry) => ({
         ...entry,
+        name: (
+          <a
+            href={`https://facebook.com/groups/${entry.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {entry.name}
+          </a>
+        ),
         description: filter(shorten(entry.description)),
         foundedOn: moment(entry.foundedOn).format("YYYY-MM-DD"),
         scrapedAt: moment(entry.scrapedAt).fromNow(),
