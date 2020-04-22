@@ -31,6 +31,7 @@ function App() {
             </TopAppBarSection>
             <TopAppBarSection alignEnd>
               <nav>
+
                 <Link to="/">directory</Link>
                 <Link to="/about">about</Link>
                 <Link to="/ideas">submit an idea</Link>
