@@ -1,6 +1,6 @@
 # ppeforfree.org
 
-Promoting and coordinating not-for-profit and nonprofit PPE initiatives around the world.
+Collective sensemaking powered by open data for PPE Initiatives around the world. A mass collaboration experiment in the making.
 
 ## Status
 
@@ -30,9 +30,3 @@ run `npm start` in the root of the repository.
 ## Testing
 
 run `npm test` in the root of the repository.
-
-## Credits and references
-
-1. Phil Tucker's 3DPrintedPPE.com
-2. Open Source COVID19 Medical Supplies [roster doc](https://docs.google.com/spreadsheets/d/1JH5uL3WW6PwvwFRe4wqXkheK0-jcGYqaPmb9J3Dr6Ac/edit?fbclid=IwAR3FX_xPe-bYbXQmjsXF5FUr7aISp27wGwHXuNIWzh92ScdQQSgVVrbixBo#gid=179139280)
-3. www.covidhelpmap.com
