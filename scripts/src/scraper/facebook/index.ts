@@ -38,7 +38,7 @@ export class FacebookScraperSession {
       fatalError: console.error,
     },
   });
-  private timeout: number = 30000;
+  private timeout: number = 80000;
 
   constructor(page: Page) {
     this.page = page;
