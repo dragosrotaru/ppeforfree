@@ -1,8 +1,8 @@
 ---
 name: UI/UX Improvement
-about: Suggest a UI/UX improvement for this project
+about: User Interface/Experience improvement
 title: ''
-labels: 'ui/ux'
+labels: 'UI + UX'
 assignees: ''
 
 ---
