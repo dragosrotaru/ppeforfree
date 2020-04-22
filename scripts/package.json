@@ -1,17 +1,17 @@
 {
-  "name": "@ppeforfree/fb-scripts",
+  "name": "@ppeforfree/scripts",
   "version": "0.0.1",
   "homepage": "https://ppeforfree.org",
   "description": "Facebook Scripts",
-  "author": "Dragos Rotaru <dragos@rotaru.co>",
+  "author": "PPEForFree",
   "license": "GNU GPL V3",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dragosrotaru/ppeforfree.git"
+    "url": "git+https://github.com/PPEForFree/ppeforfree.git"
   },
   "bugs": {
-    "url": "https://github.com/dragosrotaru/ppeforfree/issues"
+    "url": "https://github.com/PPEForFree/ppeforfree/issues"
   },
   "main": "index.js",
   "typings": "lib/index.d.ts",

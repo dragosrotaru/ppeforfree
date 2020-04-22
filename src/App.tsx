@@ -31,7 +31,6 @@ function App() {
             </TopAppBarSection>
             <TopAppBarSection alignEnd>
               <nav>
-
                 <Link to="/">directory</Link>
                 <Link to="/about">about</Link>
                 <Link to="/ideas">submit an idea</Link>
@@ -43,7 +42,7 @@ function App() {
                   join us
                 </a>
                 <a
-                  href="http://github.com/DragosRotaru/ppeforfree"
+                  href="http://github.com/PPEForFree"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
