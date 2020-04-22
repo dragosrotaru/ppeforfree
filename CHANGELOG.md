@@ -16,6 +16,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.0.2 - 2020-04-09
 
+### Added
+
 - Added Header and Navigation
 - Added About Page
 - Added Github Link
+
+## 0.0.3 - 2020-04-21
+
+### Added
+
+- Added Scraper for Facebook Groups
+- Added Data
+- Added Table
+- Added basic theming
+- Added Google Tag Manager and Google Analytics Tracking
+- Added Idea Submission Form
+- Added Initiative Submission Form
+- Added SEO metatags
