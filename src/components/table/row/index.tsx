@@ -10,7 +10,7 @@ export const TableRow = ({ columns, data }: Props) => (
   <tr>
     {columns.map((col) => (
       <td key={col.key}>
-        {data[col.key] !== undefined ? data[col.key].toString() : "n/a"}
+        {data[col.key] !== undefined ? data[col.key] : "n/a"}
       </td>
     ))}
   </tr>
