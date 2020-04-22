@@ -1,17 +1,17 @@
 {
   "name": "ppeforfree",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "homepage": "https://ppeforfree.org",
   "description": "Promoting and coordinating not-for-profit and nonprofit PPE initiatives around the world.",
-  "author": "Dragos Rotaru <dragos@rotaru.co>",
+  "author": "PPEForFree",
   "license": "GNU GPL V3",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dragosrotaru/ppeforfree.git"
+    "url": "git+https://github.com/PPEForFree/ppeforfree.git"
   },
   "bugs": {
-    "url": "https://github.com/dragosrotaru/ppeforfree/issues"
+    "url": "https://github.com/PPEForFree/ppeforfree/issues"
   },
   "dependencies": {
     "moment": "^2.24.0",

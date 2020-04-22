@@ -90,7 +90,7 @@ export const About = () => (
         <br />
         <br />
         If you would like to get involved{" "}
-        <a href="https://discord.gg/yuBMbJf">join us on discord</a>
+        <a href="https://discord.gg/pWF2zBf">join us on discord</a>
       </p>
     </div>
   </div>
