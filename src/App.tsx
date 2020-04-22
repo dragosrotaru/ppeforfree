@@ -16,7 +16,9 @@ import {
 
 // Pages
 import { About } from "./pages/about";
-import { Directory } from "./pages/directory";
+import { Ideas } from "./pages/ideas";
+import { InitiativeDirectory } from "./pages/initiatives";
+import { InitiativeSubmission } from "./pages/initiative-submission";
 
 function App() {
   return (
@@ -31,6 +33,14 @@ function App() {
               <nav>
                 <Link to="/">directory</Link>
                 <Link to="/about">about</Link>
+                <Link to="/ideas">submit an idea</Link>
+                <a
+                  href="https://discord.gg/pWF2zBf"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  join us
+                </a>
                 <a
                   href="http://github.com/DragosRotaru/ppeforfree"
                   target="_blank"
@@ -45,8 +55,10 @@ function App() {
         <TopAppBarFixedAdjust />
 
         <Switch>
+          <Route path="/ideas" component={Ideas} />
+          <Route path="/initiatives/submit" component={InitiativeSubmission} />
           <Route path="/about" component={About} />
-          <Route path="/" component={Directory} />
+          <Route path="/" component={InitiativeDirectory} />
         </Switch>
       </Router>
     </div>
