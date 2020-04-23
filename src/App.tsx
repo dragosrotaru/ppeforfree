@@ -17,6 +17,7 @@ import {
 // Pages
 import { About } from "./pages/about";
 import { Directory } from "./pages/directory";
+import { Graph } from "./pages/graph";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <TopAppBarSection alignEnd>
               <nav>
                 <Link to="/">directory</Link>
+                <Link to="/graph">graph</Link>
                 <Link to="/about">about</Link>
                 <a
                   href="http://github.com/DragosRotaru/ppeforfree"
@@ -46,7 +48,9 @@ function App() {
 
         <Switch>
           <Route path="/about" component={About} />
+          <Route path="/graph" component={Graph} />
           <Route path="/" component={Directory} />
+          
         </Switch>
       </Router>
     </div>
