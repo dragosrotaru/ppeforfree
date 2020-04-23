@@ -42,11 +42,20 @@ function App() {
                   join us
                 </a>
                 <a
+                  href="https://twitter.com/ppeforfree"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="icon icon-twitter"
+                >
+                  <img  src="/twitter-icon.png"/>
+                </a>
+                <a
                   href="http://github.com/PPEForFree"
                   target="_blank"
                   rel="noreferrer noopener"
+                  className="icon icon-github"
                 >
-                  github
+                  <img src="/github-icon.png"/>
                 </a>
               </nav>
             </TopAppBarSection>
