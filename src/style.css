@@ -8,6 +8,23 @@ body {
   line-height: 1.5;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+nav .icon img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: auto;
+}
+
 :root {
   --success-color: #00ae4e;
   --warning-color: #f1c40f;
