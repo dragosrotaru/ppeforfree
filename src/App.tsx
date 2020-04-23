@@ -47,7 +47,7 @@ function App() {
                   rel="noreferrer noopener"
                   className="icon icon-twitter"
                 >
-                  <img  src="/twitter-icon.png"/>
+                  <img src="/twitter-icon.png" alt="twitter" />
                 </a>
                 <a
                   href="http://github.com/PPEForFree"
@@ -55,7 +55,7 @@ function App() {
                   rel="noreferrer noopener"
                   className="icon icon-github"
                 >
-                  <img src="/github-icon.png"/>
+                  <img src="/github-icon.png" alt="github" />
                 </a>
               </nav>
             </TopAppBarSection>

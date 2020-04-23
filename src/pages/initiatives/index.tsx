@@ -70,8 +70,9 @@ const filter = (input: string) => {
   return input;
 };
 
-const shorten = (input: string) => {
+const shorten = (input?: string) => {
   const MAX_LENGTH = 100;
+  if (!input) return "";
   if (input.length > MAX_LENGTH) return input.slice(0, MAX_LENGTH) + "...";
   return input;
 };
