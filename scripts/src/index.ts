@@ -1,6 +1,7 @@
 import { parseIndexFile } from "./csv";
 import { Scraper } from "./scraper";
 import { MongoClient } from "mongodb";
+// import moment from "moment";
 // import { writeToJSON } from "./json";
 
 /* (async () => {
@@ -11,9 +12,9 @@ import { MongoClient } from "mongodb";
   const db = mongoClient.db("ppeforfree");
   const collection = db.collection("facebook-groups-scrapes");
   const data = await collection.find({
-    scrapeID: "550fbe28-21d2-45ae-ada5-737307596294",
+    scrapeID: "e6db115a-a9cc-4584-adcc-20d0c857d58d",
   });
-  writeToJSON("../data/2020-04-20-1.json", await data.toArray());
+  writeToJSON(`../data/${moment().format("YYYY-MM-DD")}.json`, await data.toArray());
 })(); */
 
 (async () => {
