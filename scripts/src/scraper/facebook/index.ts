@@ -349,18 +349,18 @@ export class FacebookScraperSession {
     if (!exists) throw new Error("invalid group ID");
 
     const about = await this.scrapeGroupAbout(id);
-    const admins = await this.scrapeGroupAdmins(id);
+    // const admins = await this.scrapeGroupAdmins(id);
     const pages = await this.scrapeGroupPages(id);
-    const members = await this.scrapeGroupMembers(id);
+    // const members = await this.scrapeGroupMembers(id);
 
     return {
       id,
       scrapeID: this.id,
       scrapedAt: moment().toISOString(),
       ...about,
-      ...admins,
+      // ...admins,
       ...pages,
-      ...members,
+      // ...members,
     };
   }
 
