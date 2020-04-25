@@ -1,6 +1,7 @@
 .center{
     margin: auto;
     display: block;
+    width: 80%;
 }
 .tooltip {
     display: inline-block;

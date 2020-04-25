@@ -8,7 +8,7 @@ export const Graph = () => {
     return (
         <div>
             <h1>Graph</h1>
-            <NodeGraph width={600} height={600} />
+            <NodeGraph />
         </div>
         )
 }
