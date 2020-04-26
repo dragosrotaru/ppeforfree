@@ -3,27 +3,9 @@
     display: block;
     width: 80%;
 }
-.tooltip {
-    display: inline-block;
-  }
-  
-  .tooltip .tooltiptext {
-    display: none;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    left: 50%;
-    margin-left: -60px;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    display: block;
-  }
+.tooltip{
+  display: none;
+}
+.circle:hover .tooltip{
+  display: block;
+}

@@ -2,13 +2,13 @@ import React from 'react';
 import './style.css'
 import data from "../../latest.json";
 
-const dataSlice = data.slice(10, 20);
+const dataSlice = data.slice(1, 10);
 
 const max = Math.max.apply(Math, dataSlice.map(function(o) { return o.memberCount; }))
 const min = Math.min.apply(Math, dataSlice.map(function(o) { return o.memberCount; }))
 
 const nodes = dataSlice.map(point => {
-  return { id: point.id, x: randomX(), y: randomY(), r:normalize(point.memberCount), fill: getFill(point.isPublic), text: point.name }
+  return { id: point.id, x: randomX(), y: randomY(), r:normalize(point.memberCount), fill: getFill(point.isPublic), topText: point.name, bottomText: point.memberCount}
 })
 
 function normalize(num){
@@ -43,9 +43,12 @@ const links = [
 
 const circles = nodes.map(node => {
   return (
-    <g key={node.id}>
+    <g className="circle" key={node.id}>
       <circle cx={node.x} cy={node.y} r={node.r} strokeWidth="2" stroke="black" fill={node.fill} />
-      <text x={node.x} y={node.y} textAnchor="middle" stroke="#fff" strokeWidth="1px" dy=".5em">{node.text}</text>
+      <text className="tooltip" x={node.x} y={node.y} textAnchor="right" stroke="#fff" strokeWidth="1px" dy=".5em">
+        <tspan x={node.x+10} dy="1.2em">Name: {node.topText}</tspan>
+        <tspan x={node.x+10} dy="1.2em">Member Count: {node.bottomText}</tspan>
+      </text>
     </g>
   )
 })
