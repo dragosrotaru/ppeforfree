@@ -16,7 +16,7 @@ function normalize(num){
 }
 
 function randomX() {
-  return 100 + Math.random() * (getWidth() - 100);
+  return 100 + Math.random() * (getWidth() - 200);
 }
 
 function randomY() {
@@ -59,11 +59,17 @@ const lines = links.map(link => {
 
 function NodeGraph () {
   return (
-    <svg className="center" width={getWidth()} height={getHeight()}>
-      <rect width={getWidth()} height={getHeight()} rx={10} fill="#272b4d" />
-      {lines}
-      {circles}
-    </svg>
+    <div>
+      <span>Legend:</span> <br></br>
+      <span>Red: Private Group</span> <br></br>
+      <span>Blue: Public Group</span>
+      <svg className="center" width={getWidth()} height={getHeight()}>
+        <rect width={getWidth()} height={getHeight()} rx={10} fill="#272b4d" />
+        {lines}
+        {circles}
+      </svg>
+    </div>
+  
   );
 };
 
