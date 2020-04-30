@@ -1,7 +1,35 @@
-h1 {
+.directory {
+  padding: 20px;
   text-align: center;
 }
 
-.directory p {
-  padding: 20px;
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.tab {
+  width: 100%;
+  background-color: #f1f1f1;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabItem {
+  width: 50%;
+  background-color: inherit;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tabItem:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tabItem.active {
+  background-color: #ccc;
 }
