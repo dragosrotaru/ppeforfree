@@ -1,6 +1,8 @@
 # Guidance on how to contribute
 
-For now, we encourage you to join our discord: https://discord.gg/pWF2zBf.
+First, please take 2 minutes to fill in our [intake form](https://bit.ly/ppeforfreeintake).
+
+We also encourage you to join us on [discord](https://discord.gg/pWF2zBf).
 
 We will need help with the following:
 
