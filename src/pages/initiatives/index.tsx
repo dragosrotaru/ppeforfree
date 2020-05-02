@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import {Table} from "../../components/table";
+import {Table, Row} from "../../components/table";
 import data from "../../latest.json";
 import "./style.css";
 import {Link} from "react-router-dom";
@@ -58,21 +58,25 @@ const columns = [
     key: "memberCount",
     dataIndex: "memberCount",
     title: "Members",
+    sorter: (a: Row, b: Row) => a.memberCount - b.memberCount,
   },
   {
     key: "memberCountIncreaseWeekly",
     dataIndex: "memberCountIncreaseWeekly",
     title: "Weekly Growth",
+    sorter: (a: Row, b: Row) => a.memberCountIncreaseWeekly - b.memberCountIncreaseWeekly,
   },
   {
     key: "postCountIncreaseDaily",
     dataIndex: "postCountIncreaseDaily",
     title: "Daily Posts",
+    sorter: (a: Row, b: Row) => a.postCountIncreaseDaily - b.postCountIncreaseDaily,
   },
   {
     key: "postCountIncreasMonthly",
     dataIndex: "postCountIncreaseMonthly",
     title: "Monthly Posts",
+    sorter: (a: Row, b: Row) => a.postCountIncreaseMonthly - b.postCountIncreaseMonthly,
   },
 ];
 

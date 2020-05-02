@@ -6,6 +6,14 @@ export type Columns = {
   key: string;
   dataIndex: string;
   title: string;
+  sorter?: any;
+};
+
+export type Row = {
+  memberCount: number;
+  memberCountIncreaseWeekly: number;
+  postCountIncreaseDaily: number;
+  postCountIncreaseMonthly: number;
 };
 
 type Props = {
