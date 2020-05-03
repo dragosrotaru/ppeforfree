@@ -62,6 +62,7 @@ function NodeGraph () {
     <div>
       <div className="legend">
         <h2>Legend:</h2>
+        <p>(Hover over circles to get group info)</p>
         <p className="legend-label red">Private Group</p>
         <p className="legend-label green">Public Group</p>
       </div>
