@@ -1,0 +1,33 @@
+.center{
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+.tooltip{
+  display: none;
+}
+.circle:hover .tooltip{
+  display: block;
+}
+.legend{
+  padding: 0 15px;
+  margin: 20px;
+  border: 2px solid black;
+  width: 125px;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+}
+.legend-label{
+  color: white;
+  padding: 0 2px;
+  word-wrap: normal;
+  font-weight: 600;
+  text-align: center;
+}
+.red{
+  background: red;
+}
+.green{
+  background: green;
+}

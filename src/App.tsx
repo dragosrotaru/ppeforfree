@@ -19,6 +19,7 @@ import { About } from "./pages/about";
 import { Ideas } from "./pages/ideas";
 import { InitiativeDirectory } from "./pages/initiatives";
 import { InitiativeSubmission } from "./pages/initiative-submission";
+import { Graph } from "./pages/graph";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <TopAppBarSection alignEnd>
               <nav>
                 <Link to="/">directory</Link>
+                <Link to="/graph">graph</Link>
                 <Link to="/about">about</Link>
                 <Link to="/ideas">submit an idea</Link>
                 <a
@@ -65,6 +67,7 @@ function App() {
 
         <Switch>
           <Route path="/ideas" component={Ideas} />
+          <Route path="/graph" component={Graph} />
           <Route path="/initiatives/submit" component={InitiativeSubmission} />
           <Route path="/about" component={About} />
           <Route path="/" component={InitiativeDirectory} />
