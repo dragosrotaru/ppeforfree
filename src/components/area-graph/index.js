@@ -28,11 +28,11 @@ function getFill(isPrivate){
 }
 
 function getWidth(){
-  return window.innerWidth*.8;
+  return window.innerWidth*.7;
 }
 
 function getHeight(){
-  return window.innerHeight*.8;
+  return window.innerHeight*.7;
 }
 
 const links = [
@@ -60,9 +60,11 @@ const lines = links.map(link => {
 function NodeGraph () {
   return (
     <div>
-      <span>Legend:</span> <br></br>
-      <span>Red: Private Group</span> <br></br>
-      <span>Blue: Public Group</span>
+      <div className="legend">
+        <h2>Legend:</h2>
+        <p className="legend-label red">Private Group</p>
+        <p className="legend-label green">Public Group</p>
+      </div>
       <svg className="center" width={getWidth()} height={getHeight()}>
         <rect width={getWidth()} height={getHeight()} rx={10} fill="#272b4d" />
         {lines}
