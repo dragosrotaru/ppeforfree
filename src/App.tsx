@@ -19,7 +19,6 @@ import { About } from "./pages/about";
 import { Ideas } from "./pages/ideas";
 import { InitiativeDirectory } from "./pages/initiatives";
 import { InitiativeSubmission } from "./pages/initiative-submission";
-import { Directory } from "./pages/directory";
 import { Graph } from "./pages/graph";
 
 function App() {
@@ -68,10 +67,10 @@ function App() {
 
         <Switch>
           <Route path="/ideas" component={Ideas} />
+          <Route path="/graph" component={Graph} />
           <Route path="/initiatives/submit" component={InitiativeSubmission} />
           <Route path="/about" component={About} />
           <Route path="/" component={InitiativeDirectory} />
-          <Route path="/graph" component={Graph} />
         </Switch>
       </Router>
     </div>
