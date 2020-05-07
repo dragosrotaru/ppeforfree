@@ -3,5 +3,6 @@ h1 {
 }
 
 .directory p {
+  text-align: center;
   padding: 20px;
 }

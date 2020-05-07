@@ -1,11 +1,19 @@
 import React from "react";
-import {TableHeader} from "./header";
-import {TableRow} from "./row";
+import {Table as AntDTable} from "antd";
 import "./style.css";
 
 export type Columns = {
   key: string;
-  name: string;
+  dataIndex: string;
+  title: string;
+  sorter?: any;
+};
+
+export type Row = {
+  memberCount: number;
+  memberCountIncreaseWeekly: number;
+  postCountIncreaseDaily: number;
+  postCountIncreaseMonthly: number;
 };
 
 type Props = {
@@ -14,12 +22,5 @@ type Props = {
 };
 
 export const Table = ({columns, data}: Props) => (
-  <table className="table">
-    <TableHeader columns={columns} />
-    <tbody>
-      {data.map((data) => (
-        <TableRow key={data.id} columns={columns} data={data} />
-      ))}
-    </tbody>
-  </table>
+  <AntDTable columns={columns} dataSource={data} rowKey="_id" />
 );

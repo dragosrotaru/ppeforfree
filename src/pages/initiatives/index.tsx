@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import {Table} from "../../components/table";
+import {Table, Row} from "../../components/table";
 import data from "../../latest.json";
 import "./style.css";
 import {Link} from "react-router-dom";
@@ -8,58 +8,75 @@ import {Link} from "react-router-dom";
 const columns = [
   {
     key: "_id",
-    name: "Mongo ID",
+    dataIndex: "_id",
+    title: "Mongo ID",
     display: false,
   },
   {
     key: "id",
-    name: "ID",
+    dataIndex: "id",
+    title: "ID",
     display: false,
   },
   {
     key: "scrapeID",
-    name: "Scrape Batch ID",
+    dataIndex: "scrapeID",
+    title: "Scrape Batch ID",
     display: false,
   },
   {
     key: "scrapedAt",
-    name: "Last Updated",
+    dataIndex: "scrapedAt",
+    title: "Last Updated",
   },
   {
     key: "name",
-    name: "Name",
+    dataIndex: "name",
+    title: "Name",
   },
   {
     key: "isPublic",
-    name: "Public",
+    dataIndex: "isPublic",
+    title: "Public",
   },
   {
     key: "foundedOn",
-    name: "Created",
+    dataIndex: "foundedOn",
+    title: "Created",
   },
   {
     key: "description",
-    name: "Description",
+    dataIndex: "description",
+    title: "Description",
   },
   {
     key: "locations",
-    name: "Locations",
+    dataIndex: "locations",
+    title: "Locations",
   },
   {
     key: "memberCount",
-    name: "Members",
+    dataIndex: "memberCount",
+    title: "Members",
+    sorter: (a: Row, b: Row) => a.memberCount - b.memberCount,
   },
   {
     key: "memberCountIncreaseWeekly",
-    name: "Weekly Growth",
+    dataIndex: "memberCountIncreaseWeekly",
+    title: "Weekly Growth",
+    sorter: (a: Row, b: Row) => a.memberCountIncreaseWeekly - b.memberCountIncreaseWeekly,
   },
   {
     key: "postCountIncreaseDaily",
-    name: "Daily Posts",
+    dataIndex: "postCountIncreaseDaily",
+    title: "Daily Posts",
+    sorter: (a: Row, b: Row) => a.postCountIncreaseDaily - b.postCountIncreaseDaily,
   },
   {
-    key: "postCountIncreaseMonthly",
-    name: "Monthly Posts",
+    key: "postCountIncreasMonthly",
+    dataIndex: "postCountIncreaseMonthly",
+    title: "Monthly Posts",
+    sorter: (a: Row, b: Row) => a.postCountIncreaseMonthly - b.postCountIncreaseMonthly,
   },
 ];
 
