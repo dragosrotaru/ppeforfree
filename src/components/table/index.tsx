@@ -1,6 +1,6 @@
 import React from "react";
-import { TableHeader } from "./header";
-import { TableRow } from "./row";
+import {TableHeader} from "./header";
+import {TableRow} from "./row";
 import "./style.css";
 
 export type Columns = {
@@ -10,10 +10,10 @@ export type Columns = {
 
 type Props = {
   columns: Columns[];
-  data: { [key: string]: any }[];
+  data: {[key: string]: any}[];
 };
 
-export const Table = ({ columns, data }: Props) => (
+export const Table = ({columns, data}: Props) => (
   <table className="table">
     <TableHeader columns={columns} />
     <tbody>

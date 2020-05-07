@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 // Router
-import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {Link, BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 // Header
 import "@rmwc/top-app-bar/styles";
@@ -15,10 +15,10 @@ import {
 } from "@rmwc/top-app-bar";
 
 // Pages
-import { About } from "./pages/about";
-import { Ideas } from "./pages/ideas";
-import { InitiativeDirectory } from "./pages/initiatives";
-import { InitiativeSubmission } from "./pages/initiative-submission";
+import {About} from "./pages/about";
+import {Ideas} from "./pages/ideas";
+import {InitiativeDirectory} from "./pages/initiatives";
+import {InitiativeSubmission} from "./pages/initiative-submission";
 
 function App() {
   return (
