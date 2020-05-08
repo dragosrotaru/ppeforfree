@@ -75,7 +75,11 @@ function App() {
               interested in leveraging your skills and experience to make a significant
               contribution to a worthwhile cause during the ongoing epidemic then please
               register your interest by joining us on{" "}
-              <a href="https://discord.gg/pWF2zBf" target="_blank">
+              <a
+                href="https://discord.gg/pWF2zBf"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 Discord
               </a>
               .

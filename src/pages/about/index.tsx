@@ -91,7 +91,7 @@ export const About = () => (
         <Paragraph>
           Please share this website on social media using the hashtag{" "}
           <strong>#ppeforfree</strong>. If you would like to get involved{" "}
-          <a href="https://discord.gg/pWF2zBf" target="_blank">
+          <a href="https://discord.gg/pWF2zBf" target="_blank" rel="noreferrer noopener">
             join us on Discord
           </a>
           .
