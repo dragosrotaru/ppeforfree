@@ -14,7 +14,7 @@ import {
   TopAppBarFixedAdjust,
 } from "@rmwc/top-app-bar";
 
-import {Layout} from "antd";
+import {Alert, Layout} from "antd";
 
 // Pages
 import {About} from "./pages/about";
@@ -66,6 +66,19 @@ function App() {
           </TopAppBarRow>
         </TopAppBar>
         <TopAppBarFixedAdjust />
+
+        <Alert
+          message="Join us!"
+          description={`
+            We're building a distributed team and are looking for volunteers. If you
+            are interested in leveraging your skills and experience to make a significant
+            contribution to a worthwhile cause during the ongoing epidemic then please
+            register your interest by joining us on Discord.
+          `}
+          type="info"
+          showIcon
+          closable
+        />
 
         <Content>
           <Switch>

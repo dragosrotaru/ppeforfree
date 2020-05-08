@@ -10,3 +10,12 @@ test("renders about page by default", () => {
   );
   expect(titleElement).toBeInTheDocument();
 });
+
+test("renders join us alert", () => {
+  const {getByText} = render(<App />);
+  const titleElement = getByText(
+    "We're building a distributed team and are looking for volunteers",
+    {exact: false}
+  );
+  expect(titleElement).toBeInTheDocument();
+});
