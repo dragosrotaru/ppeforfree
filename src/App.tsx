@@ -69,12 +69,18 @@ function App() {
 
         <Alert
           message="Join us!"
-          description={`
-            We're building a distributed team and are looking for volunteers. If you
-            are interested in leveraging your skills and experience to make a significant
-            contribution to a worthwhile cause during the ongoing epidemic then please
-            register your interest by joining us on Discord.
-          `}
+          description={
+            <div>
+              We're building a distributed team and are looking for volunteers. If you are
+              interested in leveraging your skills and experience to make a significant
+              contribution to a worthwhile cause during the ongoing epidemic then please
+              register your interest by joining us on{" "}
+              <a href="https://discord.gg/pWF2zBf" target="_blank">
+                Discord
+              </a>
+              .
+            </div>
+          }
           type="info"
           showIcon
           closable
