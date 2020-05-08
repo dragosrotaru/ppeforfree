@@ -7,7 +7,7 @@ export const About = () => (
   <>
     <Row className="normal-width" gutter={{xs: 8, sm: 16, md: 24, lg: 32}}>
       <Col>
-        <img src="/apple-icon.png" />
+        <img src="/apple-icon.png" alt="PPEForFree Logo" />
       </Col>
     </Row>
     <Row className="normal-width" gutter={{xs: 8, sm: 16, md: 24, lg: 32}}>
