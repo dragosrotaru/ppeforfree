@@ -49,6 +49,10 @@ body {
   margin-bottom: 40px;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 :root {
   --success-color: #00ae4e;
   --warning-color: #f1c40f;

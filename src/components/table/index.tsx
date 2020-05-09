@@ -9,7 +9,7 @@ export type Columns = {
   sorter?: any;
 };
 
-export type Row = {
+export type TableRow = {
   memberCount: number;
   memberCountIncreaseWeekly: number;
   postCountIncreaseDaily: number;
