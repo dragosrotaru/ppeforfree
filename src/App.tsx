@@ -14,15 +14,19 @@ import {
   TopAppBarFixedAdjust,
 } from "@rmwc/top-app-bar";
 
+import {Alert, Layout} from "antd";
+
 // Pages
 import {About} from "./pages/about";
 import {Ideas} from "./pages/ideas";
 import {InitiativeDirectory} from "./pages/initiatives";
 import {InitiativeSubmission} from "./pages/initiative-submission";
 
+const {Content} = Layout;
+
 function App() {
   return (
-    <div>
+    <Layout>
       <Router>
         <TopAppBar>
           <TopAppBarRow>
@@ -31,8 +35,8 @@ function App() {
             </TopAppBarSection>
             <TopAppBarSection alignEnd>
               <nav>
-                <Link to="/">directory</Link>
-                <Link to="/about">about</Link>
+                <Link to="/directory">directory</Link>
+                <Link to="/">about</Link>
                 <Link to="/ideas">submit an idea</Link>
                 <a
                   href="https://discord.gg/pWF2zBf"
@@ -63,14 +67,39 @@ function App() {
         </TopAppBar>
         <TopAppBarFixedAdjust />
 
-        <Switch>
-          <Route path="/ideas" component={Ideas} />
-          <Route path="/initiatives/submit" component={InitiativeSubmission} />
-          <Route path="/about" component={About} />
-          <Route path="/" component={InitiativeDirectory} />
-        </Switch>
+        <Alert
+          message="Join us!"
+          description={
+            <div>
+              We're building a distributed team and are looking for volunteers. If you are
+              interested in leveraging your skills and experience to make a significant
+              contribution to a worthwhile cause during the ongoing epidemic then please
+              register your interest by joining us on{" "}
+              <a
+                href="https://discord.gg/pWF2zBf"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Discord
+              </a>
+              .
+            </div>
+          }
+          type="info"
+          showIcon
+          closable
+        />
+
+        <Content>
+          <Switch>
+            <Route path="/ideas" component={Ideas} />
+            <Route path="/initiatives/submit" component={InitiativeSubmission} />
+            <Route path="/directory" component={InitiativeDirectory} />
+            <Route path="/" component={About} />
+          </Switch>
+        </Content>
       </Router>
-    </div>
+    </Layout>
   );
 }
 
