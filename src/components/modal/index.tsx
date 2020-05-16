@@ -68,10 +68,8 @@ export const DetailModal = ({
 
   return (
     <>
-      <div>
-        <span className="button" onClick={showModal}>
-          <EyeTwoTone />
-        </span>
+      <div data-testid="eye-icon" className="button" onClick={showModal}>
+        <EyeTwoTone />
       </div>
       <AntDModal
         title={name}
@@ -92,8 +90,8 @@ export const DetailModal = ({
               <Paragraph>
                 Locations:
                 <ul>
-                  {locations.map((location) => (
-                    <li>{location}</li>
+                  {locations.map((location, id) => (
+                    <li key={id}>{location}</li>
                   ))}
                 </ul>
               </Paragraph>

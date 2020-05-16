@@ -1,10 +1,10 @@
 import React from "react";
 import {render} from "@testing-library/react";
-import {About} from "../../pages/about";
+import {About} from "src/pages/about";
 
 test("renders logo", () => {
   const {getByAltText} = render(<About />);
-  const element = getByAltText("PPEForFree Logo", {exact: false});
+  const element = getByAltText("PPEForFree Logo");
   expect(element).toBeInTheDocument();
 });
 
