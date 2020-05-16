@@ -88,7 +88,16 @@ export const DetailModal = ({
                 <SiteLink id={id} />
               </Paragraph>
             )}
-            {locations && <Paragraph>Locations: {locations}</Paragraph>}
+            {locations && (
+              <Paragraph>
+                Locations:
+                <ul>
+                  {locations.map((location) => (
+                    <li>{location}</li>
+                  ))}
+                </ul>
+              </Paragraph>
+            )}
           </Col>
         </Row>
         <RowValue title="Created on:" value={moment(foundedOn).format("YYYY-MM-DD")} />

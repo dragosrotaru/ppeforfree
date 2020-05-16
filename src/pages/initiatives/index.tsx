@@ -109,6 +109,10 @@ const shorten = (input?: string) => {
   return input;
 };
 
+const listItems = (items?: string[]) => {
+  return items && items.join(". ");
+};
+
 export const InitiativeDirectory = () => (
   <>
     <Row className="normal-width" gutter={{xs: 8, sm: 16, md: 24, lg: 32}}>
@@ -146,6 +150,7 @@ export const InitiativeDirectory = () => (
             description: filter(shorten(entry.description)),
             foundedOn: moment(entry.foundedOn).format("YYYY-MM-DD"),
             scrapedAt: moment(entry.scrapedAt).fromNow(),
+            locations: listItems(entry.locations),
           }))}
         />
       </Col>
