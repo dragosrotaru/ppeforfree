@@ -3,7 +3,6 @@ import moment from "moment";
 import {Modal as AntDModal} from "antd";
 import {Col, Row, Typography} from "antd";
 import {EyeTwoTone} from "@ant-design/icons";
-import "./style.css";
 
 const {Paragraph} = Typography;
 

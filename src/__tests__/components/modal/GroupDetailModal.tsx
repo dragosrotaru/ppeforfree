@@ -1,6 +1,6 @@
 import React from "react";
 import {fireEvent, render} from "@testing-library/react";
-import {DetailModal} from "src/components/modal";
+import {DetailModal} from "src/components/modal/GroupDetailModal";
 
 const TestModal = () => (
   <DetailModal

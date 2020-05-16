@@ -1,6 +1,5 @@
 import React from "react";
 import {Table as AntDTable} from "antd";
-import "./style.css";
 
 export type Columns = {
   key: string;
@@ -9,7 +8,7 @@ export type Columns = {
   sorter?: any;
 };
 
-export type TableRow = {
+export type InitiativeTableRow = {
   memberCount: number;
   memberCountIncreaseWeekly: number;
   postCountIncreaseDaily: number;
@@ -21,7 +20,7 @@ type Props = {
   data: {[key: string]: any}[];
 };
 
-export const Table = ({columns, data}: Props) => (
+export const InitiativeTable = ({columns, data}: Props) => (
   <AntDTable
     columns={columns}
     dataSource={data}
