@@ -1,8 +1,8 @@
 .button {
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
-  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.045);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.045);
   touch-action: manipulation;
   padding: 4px 15px;
   font-size: 14px;
@@ -11,14 +11,4 @@
   cursor: pointer;
   font-weight: 400;
   line-height: 1.5715;
-}
-
-.public-button {
-  background-color: #00cc88;
-  border-color: #00cc88;
-}
-
-.private-button {
-  background-color: #1890ff;
-  border-color: #1890ff;
 }

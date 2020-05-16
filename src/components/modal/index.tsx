@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import moment from "moment";
 import {Modal as AntDModal} from "antd";
 import {Col, Row, Typography} from "antd";
+import {EyeTwoTone} from "@ant-design/icons";
 import "./style.css";
 
 const {Paragraph} = Typography;
@@ -67,11 +68,10 @@ export const DetailModal = ({
 
   return (
     <>
-      <div
-        className={isPublic ? "button public-button" : "button private-button"}
-        onClick={showModal}
-      >
-        {name}
+      <div>
+        <span className="button" onClick={showModal}>
+          <EyeTwoTone />
+        </span>
       </div>
       <AntDModal
         title={name}

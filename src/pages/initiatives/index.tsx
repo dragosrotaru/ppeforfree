@@ -29,6 +29,11 @@ const columns = [
     display: false,
   },
   {
+    key: "modal",
+    dataIndex: "modal",
+    title: "",
+  },
+  {
     key: "name",
     dataIndex: "name",
     title: "",
@@ -124,7 +129,7 @@ export const InitiativeDirectory = () => (
           columns={columns.filter((col) => col.display !== false)}
           data={data.map((entry) => ({
             ...entry,
-            name: (
+            modal: (
               <DetailModal
                 id={entry.id}
                 name={entry.name}
