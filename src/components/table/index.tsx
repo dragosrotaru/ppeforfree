@@ -22,5 +22,10 @@ type Props = {
 };
 
 export const Table = ({columns, data}: Props) => (
-  <AntDTable columns={columns} dataSource={data} rowKey="_id" />
+  <AntDTable
+    columns={columns}
+    dataSource={data}
+    rowKey="_id"
+    pagination={{pageSize: 50, position: ["bottomCenter"]}}
+  />
 );
