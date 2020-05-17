@@ -38,7 +38,6 @@ export class FacebookScraperSession {
       fatalError: console.error,
     },
   });
-  private timeout: number = 80000;
 
   constructor(page: Page) {
     this.page = page;
@@ -46,6 +45,34 @@ export class FacebookScraperSession {
 
   private sleep(ms?: number) {
     return ms ? sleep(ms) : randomSleep(400, 2000);
+  }
+
+  private waitForNetworkIdle() {
+    const { page } = this;
+    page.on("request", onRequestStarted);
+    page.on("requestfinished", onRequestFinished);
+    page.on("requestfailed", onRequestFinished);
+
+    let inflight = 0;
+    let fulfill: () => void;
+    let promise = new Promise(x => (fulfill = x));
+    return promise;
+
+    function done() {
+      page.removeListener("request", onRequestStarted);
+      page.removeListener("requestfinished", onRequestFinished);
+      page.removeListener("requestfailed", onRequestFinished);
+      fulfill();
+    }
+
+    function onRequestStarted() {
+      ++inflight;
+    }
+
+    function onRequestFinished() {
+      --inflight;
+      if (inflight === 0) done();
+    }
   }
 
   private async autoScroll() {
@@ -58,7 +85,7 @@ export class FacebookScraperSession {
       await this.page.evaluate(
         "window.scrollTo(0, document.body.scrollHeight)"
       );
-      await this.sleep(5000);
+      await Promise.all([this.sleep(1000), this.waitForNetworkIdle()]);
       heightOne = heightTwo;
       heightTwo = (await this.page.evaluate(
         "document.body.scrollHeight"
@@ -70,7 +97,7 @@ export class FacebookScraperSession {
     this._currentUrl = url;
     await this.page.goto(url, {
       waitUntil: "networkidle2",
-      timeout: this.timeout,
+      timeout: 3600000,
     });
     this._currentUrlIsInvalid = await this.pageIsInvalid();
     await this.sleep();
@@ -90,21 +117,34 @@ export class FacebookScraperSession {
     );
   }
 
+  public async isLoggedIn() {
+    if (this.lock) throw new Error("facebook scraper session currently in use");
+    this.lock = true;
+    if (this._isLoggedIn) return true;
+    const FB_USERID = process.env.FB_USERID;
+    await this.goto("https://facebook.com");
+    const elem = await this.page.$(
+      `a[href="https://www.facebook.com/${FB_USERID}"]`
+    );
+    const isLoggedIn = elem ? true : false;
+    this._isLoggedIn = isLoggedIn;
+    this.lock = false;
+    return isLoggedIn;
+  }
+
   /**
    * if FB_2FA ENV Variable is set to true, session will wait 30 seconds for user to input 2FA code.
    */
-  public async login() {
-    if (this._isLoggedIn)
-      throw new Error("facebook scraper session already logged in");
+  public async login(): Promise<boolean> {
+    if (await this.isLoggedIn()) return true;
 
     const FB_USERNAME = process.env.FB_USERNAME;
     const FB_PASSWORD = process.env.FB_PASSWORD;
     const FB_USERID = process.env.FB_USERID;
     const FB_2FA = process.env.FB_2FA;
 
-    if (!FB_USERNAME || !FB_PASSWORD || !FB_USERID) {
+    if (!FB_USERNAME || !FB_PASSWORD || !FB_USERID)
       throw new Error("Facebook credentials Required");
-    }
 
     if (this.lock) throw new Error("facebook scraper session currently in use");
     this.lock = true;
@@ -120,14 +160,8 @@ export class FacebookScraperSession {
     await page.waitForNavigation();
 
     if (FB_2FA) await this.sleep(20000);
-
-    // Check if logged in
-    const elem = await page.$(
-      `a[href="https://www.facebook.com/${FB_USERID}"]`
-    );
     this.lock = false;
-    if (!elem) throw new Error("login failed");
-    this._isLoggedIn = true;
+    return await this.isLoggedIn();
   }
 
   public async groupExists(id: FacebookID): Promise<boolean> {
@@ -135,16 +169,32 @@ export class FacebookScraperSession {
     return !this._currentUrlIsInvalid;
   }
 
+  public async getGroupAboutDOM(id: FacebookID) {
+    if (this.lock) throw new Error("facebook scraper session currently in use");
+    this.lock = true;
+    await this.goto(`https://facebook.com/groups/${id}/about`);
+    const seeMoreDescButton = await this.page.$x(
+      "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div/div/div/div/div/div[2]/div[1]/div/div/span/div/div[2]/div"
+    );
+    if (seeMoreDescButton[0]) {
+      await seeMoreDescButton[0].click();
+    }
+    const seeMoreLocationButton = await this.page.$x(
+      "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div/div/div/div/div/div[2]/div[4]/div/div/div[2]/div/div/span/span/div"
+    );
+    if (seeMoreLocationButton[0]) {
+      await seeMoreLocationButton[0].click();
+    }
+    const dom = this.domParser.parseFromString(await this.page.content());
+    this.lock = false;
+    return dom;
+  }
+
   public async scrapeGroupAbout(
     id: FacebookID
   ): Promise<Partial<FacebookGroupAboutScrape>> {
     const result: Partial<FacebookGroupAboutScrape> = {};
-
-    if (this.lock) throw new Error("facebook scraper session currently in use");
-    this.lock = true;
-    await this.goto(`https://facebook.com/groups/${id}/about`);
-    const dom = this.domParser.parseFromString(await this.page.content());
-
+    const dom = await this.getGroupAboutDOM(id);
     try {
       const nameXPath =
         "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[1]/div[2]/div/div/div/div/div[1]/div/div/div[1]/h1/text()";
@@ -168,14 +218,14 @@ export class FacebookScraperSession {
     const divIndex = result.isPublic ? "4" : "2";
 
     try {
-      const descriptionXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[1]/div/div/div/div/div[2]/div[1]/descendant::*/text()`;
+      const descriptionXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[1]/div/div/div/div/div/div[2]/div[1]/descendant::*/text()`;
       result.description = xpath.select(descriptionXPath, dom)[0].toString();
     } catch (error) {
       console.error(`${id}: description: ${error.message}`);
     }
 
     try {
-      const locationsXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[1]/div/div/div/div/div[2]/div[4]/div/div/div[2]/div/div/span/span/strong/text()`;
+      const locationsXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[1]/div/div/div/div/div/div[2]/div[4]/div/div/div[2]/div/div/span/span/strong/text()`;
       const locations = xpath
         .select(locationsXPath, dom)
         .map(e => e.toString());
@@ -185,7 +235,7 @@ export class FacebookScraperSession {
     }
 
     try {
-      const historyXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[1]/div/div/div/div/div[2]/div[last()]/div/div/div[2]/div/div[2]/span/span/text()`;
+      const historyXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[1]/div/div/div/div/div/div[2]/div[last()]/div/div/div[2]/div/div[2]/span/span/text()`;
       result.foundedOn = moment(
         xpath
           .select(historyXPath, dom)[0]
@@ -200,7 +250,7 @@ export class FacebookScraperSession {
     }
 
     try {
-      const memberCountXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[2]/div/div/div/div/div[1]/div/div/div/div/div/h1/div/span/strong/text()`;
+      const memberCountXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[3]/div/div/div/div/div/div[2]/div/div[2]/div/div/div[2]/div/div[1]/span/text()`;
       result.memberCount = parseInt(
         xpath.select(memberCountXPath, dom)[0].toString()
       );
@@ -209,7 +259,7 @@ export class FacebookScraperSession {
     }
 
     try {
-      const memberCountIncreaseWeeklyXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[3]/div/div/div/div/div[2]/div/div[2]/div/div/div[2]/div/div[2]/span/text()`;
+      const memberCountIncreaseWeeklyXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[3]/div/div/div/div/div/div[2]/div/div[2]/div/div/div[2]/div/div[2]/span/text()`;
       result.memberCountIncreaseWeekly = parseInt(
         xpath
           .select(memberCountIncreaseWeeklyXPath, dom)[0]
@@ -221,7 +271,7 @@ export class FacebookScraperSession {
     }
 
     try {
-      const postCountIncreaseDailyXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[3]/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/span/text()`;
+      const postCountIncreaseDailyXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[3]/div/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/span/text()`;
       result.postCountIncreaseDaily = parseInt(
         xpath.select(postCountIncreaseDailyXPath, dom)[0].toString()
       );
@@ -230,7 +280,7 @@ export class FacebookScraperSession {
     }
 
     try {
-      const postCountIncreaseMonthlyXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[3]/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/span/text()`;
+      const postCountIncreaseMonthlyXPath = `/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[${divIndex}]/div/div[3]/div/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/span/text()`;
       result.postCountIncreaseMonthly = parseInt(
         xpath.select(postCountIncreaseMonthlyXPath, dom)[0].toString()
       );
@@ -238,7 +288,6 @@ export class FacebookScraperSession {
       console.error(`${id}: postCountIncreaseMonthly: ${error.message}`);
     }
 
-    this.lock = false;
     return result;
   }
 
@@ -256,7 +305,7 @@ export class FacebookScraperSession {
 
     try {
       const adminModeratorCountXPath =
-        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div[2]/div[1]/div/div[1]/div/div/div/div/div/h1/div/span/strong/text()";
+        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div/div[2]/div[1]/div/div[1]/div/div/div/div/div/h1/div/span/strong/text()";
       result.adminModeratorCount = parseInt(
         xpath.select(adminModeratorCountXPath, dom)[0].toString()
       );
@@ -266,7 +315,7 @@ export class FacebookScraperSession {
 
     try {
       const adminModeratorListXPath =
-        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div[1]/div/div/div[1]/span/span/div/a/@href";
+        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div[1]/div/div/div[1]/span/span/div/a/@href";
       result.adminModeratorList = xpath
         .select(adminModeratorListXPath, dom)
         .map(e => xPathHrefIDExtractor(e.toString()));
@@ -291,7 +340,7 @@ export class FacebookScraperSession {
 
     try {
       const pageCountXPath =
-        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div[2]/div/div/div[1]/div/div/div/div/div[1]/h1/div/span/strong/text()";
+        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div/div[2]/div/div/div[1]/div/div/div/div/div[1]/h1/div/span/strong/text()";
       result.pageCount = parseInt(
         xpath.select(pageCountXPath, pageDoc)[0].toString()
       );
@@ -301,7 +350,7 @@ export class FacebookScraperSession {
 
     try {
       const pageListXPath =
-        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div[1]/div/div/div[1]/span/span/div/a/@href";
+        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div[1]/div/div/div[1]/span/span/div/a/@href";
       result.pageList = xpath
         .select(pageListXPath, pageDoc)
         .map(e => xPathHrefIDExtractor(e.toString()));
@@ -325,7 +374,7 @@ export class FacebookScraperSession {
 
     try {
       const memberListXPath =
-        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div[2]/div[last()]/div/div[2]/div/div/div/div/div[2]/div[1]/div/div/div[1]/span/span/div/a/@href";
+        "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div/div/div[2]/div[1]/div/div/div[1]/span/span/div/a/@href";
       result.memberList = xpath
         .select(memberListXPath, dom)
         .map(e => xPathHrefIDExtractor(e.toString()));
@@ -350,7 +399,7 @@ export class FacebookScraperSession {
 
     const about = await this.scrapeGroupAbout(id);
     // const admins = await this.scrapeGroupAdmins(id);
-    const pages = await this.scrapeGroupPages(id);
+    // const pages = await this.scrapeGroupPages(id);
     // const members = await this.scrapeGroupMembers(id);
 
     return {
@@ -359,7 +408,7 @@ export class FacebookScraperSession {
       scrapedAt: moment().toISOString(),
       ...about,
       // ...admins,
-      ...pages,
+      // ...pages,
       // ...members,
     };
   }
@@ -370,9 +419,5 @@ export class FacebookScraperSession {
 
   public get currentUrlIsInvalid() {
     return this._currentUrlIsInvalid;
-  }
-
-  public get isLoggedIn() {
-    return this._isLoggedIn;
   }
 }

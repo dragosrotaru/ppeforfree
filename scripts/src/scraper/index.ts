@@ -7,6 +7,7 @@ export class Scraper {
 
   public async init() {
     const browser = await puppeteer.launch({
+      userDataDir: "./chrome_user_data",
       headless: false, // must be false
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
