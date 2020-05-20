@@ -22,8 +22,8 @@ import { MongoClient } from "mongodb";
     useUnifiedTopology: true,
   });
   await mongoClient.connect();
-  const db = mongoClient.db("ppeforfree");
-  const collection = db.collection("facebook-groups-scrapes");
+  // const db = mongoClient.db("ppeforfree");
+  // const collection = db.collection("facebook-groups-scrapes");
 
   const scraper = new Scraper();
   await scraper.init();
@@ -33,7 +33,7 @@ import { MongoClient } from "mongodb";
   await facebookScraperSession.login();
   console.log("facebook scraper session logged in successfully");
   const facebookGroupIDArray = parseIndexFile();
-  for (let index = 0; index < facebookGroupIDArray.length; index++) {
+  for (let index = 0; index < 1; index++) {
     const groupID = facebookGroupIDArray[index];
     try {
       console.log(
@@ -58,7 +58,7 @@ import { MongoClient } from "mongodb";
         scrapedGroup.adminModeratorList?.length,
         scrapedGroup.adminModeratorCount
       );
-      await collection.insertOne(scrapedGroup);
+      // await collection.insertOne(scrapedGroup);
     } catch (error) {
       console.error(`${groupID} | ${error.message}`);
     }
