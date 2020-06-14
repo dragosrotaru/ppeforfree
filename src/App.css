@@ -34,6 +34,10 @@ body {
   line-height: 2;
 }
 
+.font-small {
+  font-size: small;
+}
+
 .ant-layout-content {
   width: 100vw;
   display: flex;
@@ -46,11 +50,18 @@ body {
 
 .normal-width {
   max-width: 800px;
-  margin-bottom: 40px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
 }
 
 .text-align-center {
   text-align: center;
+}
+
+.contributor {
+  min-width: 260px;
 }
 
 .button {

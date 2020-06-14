@@ -18,6 +18,7 @@ import {Alert, Layout} from "antd";
 
 // Pages
 import {About} from "./pages/about";
+import {Contributors} from "./pages/contributors";
 import {Ideas} from "./pages/ideas";
 import {InitiativeDirectory} from "./pages/initiatives";
 import {InitiativeSubmission} from "./pages/initiative-submission";
@@ -37,6 +38,7 @@ function App() {
               <nav>
                 <Link to="/directory">directory</Link>
                 <Link to="/">about</Link>
+                <Link to="/contributors">contributors</Link>
                 <Link to="/ideas">submit an idea</Link>
                 <a
                   href="https://discord.gg/pWF2zBf"
@@ -95,6 +97,7 @@ function App() {
             <Route path="/ideas" component={Ideas} />
             <Route path="/initiatives/submit" component={InitiativeSubmission} />
             <Route path="/directory" component={InitiativeDirectory} />
+            <Route path="/contributors" component={Contributors} />
             <Route path="/" component={About} />
           </Switch>
         </Content>

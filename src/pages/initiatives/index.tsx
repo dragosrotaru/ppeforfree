@@ -30,7 +30,7 @@ const listItems = (items?: string[]) => {
 
 export const InitiativeDirectory = () => (
   <>
-    <Row className="normal-width" gutter={{xs: 8, sm: 16, md: 24, lg: 32}}>
+    <Row className="normal-width margin-bottom" gutter={{xs: 8, sm: 16, md: 24, lg: 32}}>
       <Col>
         <Title level={1}>PPEForFree Initiative Directory</Title>
         <Paragraph>
