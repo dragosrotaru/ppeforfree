@@ -1,6 +1,5 @@
 import React from "react";
 import {Table as AntDTable} from "antd";
-import "./style.css";
 
 export type Columns = {
   key: string;
@@ -9,7 +8,7 @@ export type Columns = {
   sorter?: any;
 };
 
-export type Row = {
+export type InitiativeTableRow = {
   memberCount: number;
   memberCountIncreaseWeekly: number;
   postCountIncreaseDaily: number;
@@ -21,6 +20,11 @@ type Props = {
   data: {[key: string]: any}[];
 };
 
-export const Table = ({columns, data}: Props) => (
-  <AntDTable columns={columns} dataSource={data} rowKey="_id" />
+export const InitiativeTable = ({columns, data}: Props) => (
+  <AntDTable
+    columns={columns}
+    dataSource={data}
+    rowKey="_id"
+    pagination={{pageSize: 50, position: ["bottomCenter"]}}
+  />
 );

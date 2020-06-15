@@ -14,6 +14,7 @@
     "url": "https://github.com/PPEForFree/ppeforfree/issues"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.1.0",
     "antd": "^4.2.0",
     "moment": "^2.24.0",
     "react": "^16.13.1",
