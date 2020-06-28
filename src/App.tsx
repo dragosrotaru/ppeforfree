@@ -36,24 +36,15 @@ function App() {
             </TopAppBarSection>
             <TopAppBarSection alignEnd>
               <nav>
-                <Link to="/directory">directory</Link>
                 <Link to="/">about</Link>
+                <Link to="/directory">directory</Link>
                 <Link to="/contributors">contributors</Link>
-                <Link to="/ideas">submit an idea</Link>
                 <a
                   href="https://discord.gg/pWF2zBf"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   join us
-                </a>
-                <a
-                  href="https://twitter.com/ppeforfree"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="icon icon-twitter"
-                >
-                  <img src="/twitter-icon.png" alt="twitter" />
                 </a>
                 <a
                   href="http://github.com/PPEForFree"
