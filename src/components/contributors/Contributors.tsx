@@ -43,7 +43,7 @@ const Person = ({data}: PersonProps) => (
     </div>
     <div>
       {data.url ? (
-        <a href={data.url} target="_blank">
+        <a href={data.url} target="_blank" rel="noopener noreferrer">
           {data.name}
         </a>
       ) : (
@@ -63,7 +63,7 @@ const Organisation = ({data}: OrganisationProps) => (
       <Avatar src={data.avatarUrl} size={64} />
     </div>
     <div>
-      <a href={data.url} target="_blank">
+      <a href={data.url} target="_blank" rel="noopener noreferrer">
         {data.name}
       </a>
     </div>
@@ -77,8 +77,8 @@ const PeopleRow = ({people}: ContributorsPeopleProps) => (
     gutter={{xs: 8, sm: 16, md: 24, lg: 32}}
     align="top"
   >
-    {people.map((person) => (
-      <Person data={person} />
+    {people.map((person, key) => (
+      <Person data={person} key={key} />
     ))}
   </Row>
 );
@@ -88,14 +88,14 @@ export const ContributorsPeople = ({people}: ContributorsPeopleProps) => {
 
   return (
     <>
-      {groupedPeople.map((group) => {
+      {groupedPeople.map((group, key) => {
         const first = group.slice(0, 2);
         const second = group.slice(2, 6);
         return (
-          <>
+          <React.Fragment key={key}>
             <PeopleRow people={first} />
             {second ? <PeopleRow people={second} /> : ""}
-          </>
+          </React.Fragment>
         );
       })}
     </>
@@ -107,8 +107,8 @@ export const ContributorsOrganisations = ({
 }: ContributorsOrganisationProps) => {
   return (
     <>
-      {organisations.map((organisation) => (
-        <Organisation data={organisation} />
+      {organisations.map((organisation, key) => (
+        <Organisation data={organisation} key={key} />
       ))}
     </>
   );
