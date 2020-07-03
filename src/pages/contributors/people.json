@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Leon",
+    "location": "Angers, FR",
+    "url": "https://github.com/mindoodoo",
+    "avatarUrl": "https://avatars3.githubusercontent.com/u/10436331?s=460&u=c6a0f9ca1d07c53ddc6d64e9bb4b5d135e7817e6&v=4",
+    "roles": ["Project Lead"]
+  },
+  {
+    "name": "Elijah",
+    "location": "Kitchener, CA",
+    "url": "https://github.com/elijah-ward",
+    "avatarUrl": "https://avatars1.githubusercontent.com/u/17422956?s=460&u=2baea6458609c89c30a00569e16044d457b8808a&v=4",
+    "roles": ["Technical Lead", "Technical Contributor"]
+  },
+  {
+    "name": "Dragos",
+    "location": "Toronto, CA",
+    "url": "https://github.com/DragosRotaru",
+    "avatarUrl": "https://avatars2.githubusercontent.com/u/7482137?s=400&u=e443144a8ab9ada0f13cd7f1f7008b652819c154&v=4",
+    "roles": ["Founder", "Technical Contributor"]
+  },
+  {
+    "name": "Ollie",
+    "location": "London, UK",
+    "url": "https://github.com/ollie-codeaid",
+    "avatarUrl": "https://avatars3.githubusercontent.com/u/11909189?s=460&u=49046680eac3cedb7099a86616c1ab9df669c399&v=4",
+    "roles": ["Technical Contributor"]
+  },
+  {
+    "name": "Kurt",
+    "location": "Toronto, CA",
+    "url": "https://github.com/kurtvan",
+    "avatarUrl": "https://avatars1.githubusercontent.com/u/45082407?s=400&u=13a8474b98e6963def6968d4c3c54eeb5b20ec0b&v=4",
+    "roles": ["Technical Contributor"]
+  },
+  {
+    "name": "Michael",
+    "location": "Epsom, UK",
+    "url": "https://github.com/epsom-software",
+    "avatarUrl": "https://avatars3.githubusercontent.com/u/1492373?s=400&v=4",
+    "roles": ["Technical Contributor"]
+  },
+  {
+    "name": "Krysta",
+    "roles": ["Meta"]
+  }
+]

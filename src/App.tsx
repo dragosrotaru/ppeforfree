@@ -18,6 +18,7 @@ import {Alert, Layout} from "antd";
 
 // Pages
 import {About} from "./pages/about";
+import {Contributors} from "./pages/contributors";
 import {Ideas} from "./pages/ideas";
 import {InitiativeDirectory} from "./pages/initiatives";
 import {InitiativeSubmission} from "./pages/initiative-submission";
@@ -35,23 +36,15 @@ function App() {
             </TopAppBarSection>
             <TopAppBarSection alignEnd>
               <nav>
-                <Link to="/directory">directory</Link>
                 <Link to="/">about</Link>
-                <Link to="/ideas">submit an idea</Link>
+                <Link to="/directory">directory</Link>
+                <Link to="/contributors">contributors</Link>
                 <a
                   href="https://discord.gg/pWF2zBf"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   join us
-                </a>
-                <a
-                  href="https://twitter.com/ppeforfree"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="icon icon-twitter"
-                >
-                  <img src="/twitter-icon.png" alt="twitter" />
                 </a>
                 <a
                   href="http://github.com/PPEForFree"
@@ -95,6 +88,7 @@ function App() {
             <Route path="/ideas" component={Ideas} />
             <Route path="/initiatives/submit" component={InitiativeSubmission} />
             <Route path="/directory" component={InitiativeDirectory} />
+            <Route path="/contributors" component={Contributors} />
             <Route path="/" component={About} />
           </Switch>
         </Content>
