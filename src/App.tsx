@@ -32,12 +32,15 @@ function App() {
         <TopAppBar>
           <TopAppBarRow>
             <TopAppBarSection>
-              <TopAppBarTitle>#ppeforfree</TopAppBarTitle>
+              <TopAppBarTitle>
+                <Link to="/" className="root">
+                  #ppeforfree
+                </Link>
+              </TopAppBarTitle>
             </TopAppBarSection>
             <TopAppBarSection alignEnd>
               <nav>
                 <Link to="/">about</Link>
-                <Link to="/directory">directory</Link>
                 <Link to="/contributors">contributors</Link>
                 <a
                   href="https://discord.gg/pWF2zBf"

@@ -11,7 +11,7 @@ test("renders logo", () => {
 test("renders manifesto", () => {
   const {getByText} = render(<About />);
   const element = getByText(
-    "PPEForFree is a sense-making movement by the people and for the people",
+    "As Covid-19 transforms our society, the sheer magnitude of the pandemic has put",
     {exact: false}
   );
   expect(element).toBeInTheDocument();
@@ -20,7 +20,7 @@ test("renders manifesto", () => {
 test("renders strategy", () => {
   const {getByText} = render(<About />);
   const element = getByText(
-    "Our first goal is to dramatically scale and boost the efficiency of the decentralized Personal Protective Equipment (PPE) supply chains that have sprung up",
+    "At PPEForFree we started out with the same objective of PPE matching",
     {exact: false}
   );
   expect(element).toBeInTheDocument();
@@ -29,7 +29,7 @@ test("renders strategy", () => {
 test("renders plan of action", () => {
   const {getByText} = render(<About />);
   const element = getByText(
-    "Grab the public data from PPE Facebook groups automatically and display that data in a table.",
+    "Build the most exhaustive database of grassroots manufactured PPE",
     {exact: false}
   );
   expect(element).toBeInTheDocument();

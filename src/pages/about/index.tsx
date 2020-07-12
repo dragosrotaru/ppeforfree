@@ -13,49 +13,72 @@ export const About = () => (
     <Row className="normal-width margin-bottom" gutter={{xs: 8, sm: 16, md: 24, lg: 32}}>
       <Col>
         <Title level={1}>PPEForFree</Title>
+        <Title level={2}>The Issue</Title>
         <Paragraph>
-          PPEForFree is a sense-making movement by the people and for the people. We
-          combine Open Source Intelligence (OSINT) and Data Science capabilities with the
-          ethos and community of Wikipedia to help light a path for the millions of
-          restless minds searching for the means to fight the PPE shortage.
+          As Covid-19 transforms our society, the sheer magnitude of the pandemic has put
+          an extreme strain on many countries' health care systems. As we've come to know,
+          most systems were not ready for the high influx of patients infected by Covid-19
+          creating unanticipated shortages of medical supplies.
         </Paragraph>
         <Paragraph>
-          Today we live in an age defined by an unprecedented amount of digital
-          information. Sadly, our information ecology, the internet, is polluted with
-          misinformation, low quality data, fake news, spam and a whole suite of other
-          related issues.
+          One of the main shortages, and also the one we heard about the most in the news
+          was the shortage of PPE across the world. Personal Protective Equipment is a key
+          resource in guaranteeing the safety of healthcare professionals and their
+          patients. This equipment is crucial to reducing the loss of human lives to this
+          pandemic.
         </Paragraph>
         <Paragraph>
-          Not only that, but we have a fragmented community spread out over thousands of
-          messaging boards, facebook groups, private messaging channels and so forth. Some
-          important innovation that happens in one corner of the web doesn’t necessarily
-          reach everywhere else. So we have thousands of people reinventing the wheel.
+          In response to this issue, maker groups and individuals around the world have
+          sprung into action, deciding that they could not sit idly by as hospitals and
+          other healthcare institutions' resources were increasingly strained. This
+          dynamic has led to the emergence of a strong and innovative grassroots PPE
+          manufacturing scene.
         </Paragraph>
-        <Title level={2}>Strategy</Title>
         <Paragraph>
-          Our first goal is to dramatically scale and boost the efficiency of the
-          decentralized Personal Protective Equipment (PPE) supply chains that have sprung
-          up. Right now, there are regular people all over the world making PPE in their
-          community through what we call the Grassroots PPE Supply Chain. We want to turn
-          it up all the way to 11. We are going to amplify the signal, reduce the noise by
-          attempting to fix the information ecology of the PPE supply chain using a fresh
-          new approach.
+          This PPE is of no use if it cannot reach the institutions and individuals that
+          need it the most. The need for the establishment of an unconventional supply
+          chain has become strikingly apparent. Many organizations and initiatives have
+          surfaced around this issue and have been quite successful so far. Organizations
+          such as{" "}
+          <a href="https://findthemasks.com" target="_blank" rel="noreferrer noopener">
+            Find the Masks
+          </a>{" "}
+          and{" "}
+          <a href="https://getusppe.org" target="_blank" rel="noreferrer noopener">
+            Get Us PPE
+          </a>{" "}
+          have established an efficient and organized way to go about PPE matching between
+          individuals/organizations that can donate PPE, and institutions that are in need
+          of these supplies.
         </Paragraph>
-        <Title level={2}>Plan of action</Title>
         <Paragraph>
+          In order to reach their full potential, websites rely heavily on the knowledge
+          they have of potential providers of medical-grade PPE and grassroots
+          manufactured PPE. In that regard, they have each tried to gather data through
+          the use of forms on their sites, but that can only reach as many people as the
+          site does. This significantly limits the amount of data that can be gathered in
+          a short time frame, and therefore greatly reduces the potential impact of these
+          sites.
+        </Paragraph>
+        <Title level={2}>Our Goals</Title>
+        <Paragraph>
+          At PPEForFree we started out with the same objective of PPE matching, and
+          specifically in the case of grassroots manufactured PPE. Despite our initial
+          objective, we have taken notice that some of the websites we've cited previously
+          have gone much deeper into PPE matching and with that in mind we decided to
+          transition our focus to the data side of things.
+        </Paragraph>
+        <Paragraph>
+          Our goals at PPEForFree are as follows:
           <ul>
             <li>
-              Grab the public data from PPE Facebook groups automatically and display that
-              data in a table.
+              Build the most exhaustive database of grassroots manufactured PPE through
+              the aggregation of as many datasets as possible
             </li>
+            <li>Provide a well documented API to read our dataset</li>
             <li>
-              Make the site as user friendly and useful as possible with insightful
-              visualisations of data and search / filter / sort / export functionality for
-              easy discovery.
-            </li>
-            <li>
-              Crowd-source discovery of new groups by allowing users to submit links on
-              the website.
+              Collaborate with websites that have developed the adequate front end to make
+              good use of this data
             </li>
             <li>
               Build a team of outreach volunteers to manually verify each crowd-sourced
@@ -63,34 +86,41 @@ export const About = () => (
               communication.
             </li>
             <li>
-              Provide an open API and a kickass open-source community so potential
-              competitors work with us instead.
-            </li>
-            <li>
-              Convince as many leaders as possible to include a link to this website
-              somewhere where it is visible to every single person in their organisation.
-            </li>
-            <li>
-              Aggregate all the information, particularly links, shared acoss all facebook
-              groups, vetted by subject matter expert volunteers, and display them here.
-            </li>
-            <li>Share this website agressively on social media.</li>
-            <li>Make this site accessible in as many languages as possible.</li>
-            <li>
-              Create a comprehensive gold standard repository of PPE designs,
-              methodologies, processes, tools, etc.
-            </li>
-            <li>
-              Provide a legal framework with free waivers for every juristiction to allow
-              those donating homemade PPE to do so knowing they are staying within the
-              law.
+              Build partnerships with groups gathering data providing them with a way of
+              contributing data to our dataset
             </li>
           </ul>
         </Paragraph>
-        <Title level={2}>We need your help</Title>
+        <Title level={2}>Our Plan of Action</Title>
         <Paragraph>
-          Please share this website on social media using the hashtag{" "}
-          <strong>#ppeforfree</strong>. If you would like to get involved{" "}
+          <ul>
+            <li>
+              Meticulously identify datasets around the world along with their ease of
+              integration into our database
+            </li>
+            <li>
+              Get in touch with the maintainers of those datasets in order to explore
+              possible collaboration options to facilitate integration
+            </li>
+            <li>
+              Reach out to potential "users" of our DB to understand their needs and the
+              main issues surrounding the use/collection of this data
+            </li>
+            <li>
+              Collaborate closely with these potential "users" to determine the most
+              adequate schema
+            </li>
+            <li>
+              Build a simple and easy to use API providing universal access to our data
+            </li>
+            <li>
+              Provide clear and well-constructed documentation for our Schema and API
+            </li>
+          </ul>
+        </Paragraph>
+        <Title level={2}>We Need Your Help</Title>
+        <Paragraph>
+          If you would like to get involved{" "}
           <a href="https://discord.gg/pWF2zBf" target="_blank" rel="noreferrer noopener">
             join us on Discord
           </a>
