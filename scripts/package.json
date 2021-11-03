@@ -74,7 +74,7 @@
     "papaparse": "^5.2.0",
     "puppeteer": "^3.0.0",
     "uuid": "^3.4.0",
-    "validator": "^12.1.0",
+    "validator": "^13.7.0",
     "xmldom": "^0.3.0",
     "xpath": "0.0.27"
   },
